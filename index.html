@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Login &amp; Registration Forms</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body>
+  <div class="bgimage">
+    <div class="form-box">
+      <div class="button-box">
+        <div id="btn"></div>
+        <button type="button" class="toggle-btn" onclick="login()">Login</button>
+        <button type="button" class="toggle-btn" onclick="register()">Register</button>
+      </div>
+      <div class="social-icons">
+        <img src="https://i.postimg.cc/Tw4wxDxX/fb.png">
+        <img src="https://i.postimg.cc/sxG2ggfG/wa.png">
+        <img src="https://i.postimg.cc/h4X8d8fT/ig.png">
+      
+    </div>
+      <form id="login" class="input-group" action="insert.php" method="POST">
+        <input type="text" class="input-field" placeholder="User Id" required>
+        <input type="text" class="input-field" placeholder="Enter Password" required>
+        <input type="checkbox" class="check-box"><span>Remember Password</span>
+        <button type="submit" class="submit-btn">Login</button>
+      </form>
+      <form id="register" class="input-group">
+        <input type="user" class="input-field" placeholder="User Id" required>
+        <input type="email" class="input-field" placeholder="Email Id" required>
+        <input type="password" class="input-field" placeholder="Password" required>
+        <input type="text" class="input-field" placeholder="Phone No." required>
+        <input type="checkbox" class="check-box"><span>I agree to the terms & conditions</span>
+        <button type="submit" class="submit-btn">Register</button>
+      </form>
+    </div>   
+  </div>
+</body>
+<!-- partial -->
+  <script  src="./assets/js/script.js"></script>
+  <script type="text/javascript">
+            function validation(){
+                 var user = document.getElementById('user').value;
+                 var pass = document.getElementById('pass').value;
+                 var mobilenumber = document.getElementById('mobilenumber').value;
+                var email = document.getElementById('email').value     
+            if(user == ""){ document.getElementById('username').innerHTML = " ** Please fill the username ";
+                    return false;
+                }
+               if((user.length <= 2) || (user.length > 20)){
+                    document.getElementById('username').innerHTML = " ** Please enter the name in between range of 2 and 20";
+                    return false;
+                }
+                if(!isNaN(user)){
+                    document.getElementById('username').innerHTML = " ** Only characters are allowed";
+                    return false;
+                }
+                if(pass == ""){ document.getElementById('password').innerHTML = " ** Please fill the password";
+                    return false;
+                }
+                if((pass.length <= 5) || (pass.length > 20)){
+                    document.getElementById('password').innerHTML = " ** Password length must be between 5 and 20";
+                    return false;
+                }
+                if(mobilenumber == ""){ document.getElementById('mobileno').innerHTML = " ** Please fill the mobileno";
+                    return false;
+                } 
+                if(isNaN(mobilenumber))
+                { document.getElementById('mobileno').innerHTML = " ** Only digits are allowed  ";
+return false;
+                }
+                if(mobilenumber.length != 10){
+                    document.getElementById('mobile').innerHTML = " ** Number Must be 10 digit";
+                    return false;}
+                if(email == ""){ document.getElementById('email').innerHTML = " ** Please fill the emailid";
+                    return false;}
+                if(email.indexOf("@") <= 0){
+                    document.getElementById('email').innerHTML = " ** @ Invalid position";
+                    return false;
+                }
+                if((email.charAt(email.length - 4) != ".") && (email.charAt(email.length-3) != ".")){
+                     document.getElementById('email').innerHTML = " ** .(dot) Invalid position";
+                    return false;
+                } }
+        </script>
+
+</body>
+</html>
