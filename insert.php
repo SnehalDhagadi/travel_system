@@ -5,7 +5,7 @@ $mobile= $_POST['mobile'];
 $email = $_POST['email'];
 
 if(!empty($user)|| !empty($password)|| !empty($mobile)|| !empty($email)){
-$host="localhost";
+$host="e-rakshak.com";
 $dbUsername="erakshak_snehal";
 $dbpassword="erakshak_snehal";
 $dbname="erakshak_snehal";
